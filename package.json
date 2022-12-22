@@ -4,6 +4,7 @@
   "description": "Puma Backend",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +19,10 @@
   },
   "homepage": "https://github.com/arpitmiahra4/puma-backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.8.1"
+    "mongoose": "^6.8.1",
+    "nodemon": "^2.0.20"
   }
 }
