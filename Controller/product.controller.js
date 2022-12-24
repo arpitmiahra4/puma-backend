@@ -2,7 +2,7 @@ const { ProductModel } = require('../Models/product.model')
 
 
 const getTrending = async (req, res) => {
-    const trending = await ProductModel.find({ trending: "yes" })
+    const trending = await ProductModel.find({ trending: "yes" }).limit(5)
     res.send(trending)
 }
 
