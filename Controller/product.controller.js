@@ -17,7 +17,19 @@ const getProduct = async (req, res) => {
     res.send(product)
 }
 
+const getSingleProduct = async (req, res) => {
+    const id = req.params.id;
+    // console.log(id)
+    try {
+        const item = await ProductModel.find({ _id: id })
+        res.status(200).send(item);
+    } catch (err) {
+        res.status(500).send({ message: err })
+    }
 
-const ProductController = { getTrending, getProduct }
+}
+
+
+const ProductController = { getTrending, getProduct, getSingleProduct }
 
 module.exports = { ProductController }
