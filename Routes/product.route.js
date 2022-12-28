@@ -6,8 +6,9 @@ const productRoute = Router()
 
 
 productRoute.get("/", ProductController.getProduct)
-productRoute.get("/:id", ProductController.getSingleProduct)
 productRoute.get("/trending", ProductController.getTrending)
+productRoute.get("/:id", ProductController.getSingleProduct)
+
 
 
 

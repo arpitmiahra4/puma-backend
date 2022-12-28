@@ -8,7 +8,7 @@ const productSchema = new Schema({
     actual_price: { type: 'number', required: true },
     sizes: { type: 'array', required: true },
     images: { type: 'array', required: true },
-    tredndings: { type: 'string' }
+    trending: { type: 'string' }
 })
 
 
