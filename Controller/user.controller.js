@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { User } = require('../Models/user.model')
 const registerUser = async (req, res) => {
+    // console.log(req.body)
     try {
         const { name, email, password } = req.body;
         // check if user already exists
