@@ -21,29 +21,12 @@ const registerUser = async (req, res) => {
         // hash the password
         const salt = await bcrypt.genSalt(10);
         newUser.password = await bcrypt.hash(password, salt);
-
         // save the user to the database
         await newUser.save();
+        res.status(200).send({ message: "Registered Successfuly" })
 
-        // create a JSON web token
-        const payload = {
-            user: {
-                id: newUser.id
-            }
-        };
-        jwt.sign(
-            payload,
-            process.env.JWT_SECRET,
-            {
-                expiresIn: 3600 // 1 hour
-            },
-            (err, token) => {
-                if (err) throw err;
-                res.json({ token });
-            }
-        );
     } catch (error) {
-        console.error(error.message);
+        console.log(error);
         res.status(500).send('Server error');
     }
 }
